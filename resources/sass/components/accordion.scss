@@ -1,0 +1,97 @@
+@use '../base/variables.scss' as *;
+
+.accordion{
+
+    &__wrapper{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 30px 0;
+        
+    }
+
+    &__column{
+        position: relative;
+        margin: 20px 10px;
+        width: 450px;   
+        max-width: 95%;    
+        min-width: 250px;
+    }
+
+    &__single{
+        position: relative;    
+        margin-bottom: 20px;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 5px;
+     
+
+    }
+    &__innerWrapper{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    &__hidden{
+        max-height: 0;
+        transition: 0.3s all;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+
+        &Span{
+            text-align: center;
+            color: rgb(17, 17, 17);
+            font-size: 14px;
+            margin: 10px;
+        }
+
+    }
+
+    &__toggle{
+        max-height: 100px;
+    }
+
+    &__span{
+        margin: 15px;
+    }
+
+
+    &__circle{
+        position: relative;
+        margin-right: 20px;
+        height: 20px;
+        width: 20px;
+        background-color: $yellow;
+        border-radius: 50px;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);              
+            background-color: #fff;
+        }
+        
+        &::after{
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);              
+            background-color: #fff;
+        }
+    }
+
+}

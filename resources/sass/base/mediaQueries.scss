@@ -1,0 +1,17 @@
+
+
+@media only screen and (max-width: 1000px) {
+    .section1 {
+        &__top{
+            flex-direction: column;
+        }
+        &__left{
+            width: 100%;
+            &::after{            
+                font-size: 400px;               
+            }
+        }
+        }
+
+    
+  }

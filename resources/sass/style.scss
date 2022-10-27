@@ -1,0 +1,552 @@
+@use './base/normalize.scss' as *;
+@use './base/variables.scss' as *;
+@use './base/typography.scss' as *;
+@use './base/helper.scss' as *;
+@use './pages/authPage.scss' as *;
+@use './pages/dashboard.scss' as *;
+@use './components/btn.scss' as *;
+@use './components/topBar.scss' as *;
+@use './components/dropdown.scss' as *;
+@use './components/authForm.scss' as *;
+@use './components/contactForm.scss' as *;
+@use './components/accordion.scss' as *;
+@use './components/sidebar.scss' as *;
+@use './components/flash.scss' as *;
+@use './components/footer.scss' as *;
+@use './base/mediaQueries.scss' as *;
+
+
+.section1{
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+
+    &__top{
+        display: flex;
+    }
+    &__left{
+        position: relative;
+        overflow: hidden;
+        width: 60%;
+        min-height: 600px;
+
+        &::after{
+            content: 'Ps';
+            position: absolute;
+            top: -100px;
+            left: 0px;
+            font-size: 600px;
+            letter-spacing: 20px;
+            color: rgba(253, 249, 14, 0.178);
+            transform: rotate(-10deg);
+        }
+    }
+
+    &__circle{
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border: 4px dashed rgba(216, 213, 29, 0.37);
+        border-radius: 500px;
+        top: 0px;
+        left: 0px;
+        transform: translate(-30%, -30%);
+    }
+
+    &__innerLeft{       
+        width: 60%;
+        text-align: center;
+        margin-top: 50px;
+        margin-left: auto;
+    }
+
+    &__smallImg{
+        width: 200px;
+    }
+
+
+    &__right{
+        width: 40%;
+        background-image: url("/images/conference_vertical.jpg");
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+    &__h1{
+        font-size: 100px;
+        margin: 100px;
+        color: $white;
+        letter-spacing: 5px;
+    }
+    &__h6{
+        margin: 50px;
+        color: $white;
+        line-height: 25px;
+        
+    }
+}
+.section2{
+    background-color: rgb(10, 10, 10);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50px;
+
+    &__circle{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 3px dashed rgba(216, 213, 29, 0.37);
+        border-radius: 500px;
+        top: 0px;
+        right: 0px;
+        transform: translate(30%, -30%);
+
+    }
+
+    &__h6{
+        margin: 100px auto 50px;
+        width: 400px;
+        color: $white;
+        line-height: 25px;
+        text-align: center;
+    }
+}
+
+
+
+.section3{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        content: 'O';
+        position: absolute; 
+        font-size: 1000px;
+        bottom: 0px;
+        left: 50%;
+        color: rgba(230, 230, 230, 0.349);
+    }
+
+    &__h2{
+        margin: 100px 0 100px 300px;
+        font-size: 70px;
+        color: rgb(54, 54, 54);
+    }
+
+}
+
+.iconContainer{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 800px;
+    margin-left: 200px;
+    padding-bottom: 100px;
+
+    &__icon{
+        width: 50px;
+        margin: 30px 0;
+    }
+
+    &__single{
+        width: 50%;
+    }
+    &__title{
+       
+    }
+    &__text{
+       
+    }
+
+}
+
+
+
+
+.section4{
+   
+    height: 500px;
+
+    &__imgContainer{
+        height: 100%;
+        width: 100%;
+        background-image: url("/images/public-speaking2.jpg");
+        background-size: cover;
+        background-position: right;
+    }
+    
+    
+}
+
+
+
+
+
+
+.home{
+
+    &__opinie{
+        overflow: hidden;
+
+        &::before{
+            content: 'O';
+            position: absolute; 
+            font-size: 800px;
+            bottom: 0px;
+            left: -100px;
+            color: rgba(230, 230, 230, 0.349);
+            transform: rotate(90deg);
+        }
+
+        position: relative;
+       
+    
+        &__h1{
+            margin: 100px auto;
+            display: block;
+            text-align: center;
+            font-size: 70px;
+            letter-spacing: 6px;
+            color: rgb(85, 85, 85);
+            
+        }
+    
+              
+        &__sliderWrapper{
+            position: relative;
+            margin: 150px auto;
+            width: 850px;
+                     
+        }
+    
+    
+        &__slider{
+            width: 100%;
+            box-shadow: 1px 1px 5px 1px rgb(240, 240, 240);
+            border-radius: 10px;
+            transition: all 0.3s;
+            display: none;
+            overflow: auto;
+            padding-top: 5px;
+        }
+    
+    
+        &__moveLeft{
+            position: absolute;
+            height: 15px;
+            top: 50%;
+            left: -50px;
+            transform: translateY(-50%);
+            z-index: 1;
+            cursor: pointer;
+        }
+        &__moveRight{
+            position: absolute;
+            height: 15px;
+            top: 50%;
+            right:-50px;
+            transform: translateY(-50%);
+            z-index: 1;
+            cursor: pointer;
+        }
+    
+    
+        &__icon{
+            display: block;
+            margin: auto;
+            width: 50px;
+    
+        }
+    
+    
+        &__pTestimonial{
+            color: rgb(102, 102, 102);
+            margin: 0 50px;     
+            text-align: center;
+            line-height: 25px;
+            
+        }
+        &__pName{
+            color: rgb(41, 41, 41);
+            font-weight: bolder;
+            text-align: center;
+            margin: 40px;
+        }
+    
+    }
+}
+
+
+
+.section-faq{
+    background-color: rgb(10, 10, 10);
+    overflow: hidden;
+  
+
+    &__h1{
+        text-align: center;
+        color: #fff;
+        font-size: 70px;
+        margin: 30px 0;
+        
+    }
+}
+
+
+
+.section-endingBanner{
+
+    overflow: hidden;
+    position: relative;
+
+    &::before{
+        content: 'O';
+        position: absolute; 
+        font-size: 400px;
+        bottom: -300px;
+        right: -100px;
+        color: rgba(230, 230, 230, 0.349);
+        
+    }
+
+    &__h5{
+        text-align: center;
+        margin: 100px;
+        font-weight: 100;
+        font-style: italic;
+    }
+}
+
+
+
+.section-contact{
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    background-image: linear-gradient(to left , rgba(95, 95, 95, 0.801), rgba(95, 95, 95, 0.274)), url("/images/auditorium.jpg");
+    background-size: cover;
+  
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .section1 {
+        &__top{
+            flex-direction: column;
+        }
+        &__left{
+            width: 100%;
+            min-height: auto;
+            &::after{            
+                font-size: 400px;               
+            }
+        }
+
+        &__right{
+            width: 100%;
+            height: 300px;
+            background-position: center;
+        }
+
+        &__h1{
+            text-align: center;
+        }
+
+        &__innerLeft{       
+            margin: 50px auto;
+        }
+
+
+    }
+
+
+    .section3{
+
+ 
+        &::before{
+            content: 'O';
+            position: absolute; 
+            font-size: 1000px;
+            bottom: 0px;
+            left: 50%;
+            color: rgba(230, 230, 230, 0.349);
+        }
+    
+        &__h2{
+            margin: 100px auto;
+            text-align: center;
+        }
+    
+    }
+
+
+    .iconContainer{
+        width: auto;
+        margin: 50px 30px;
+        justify-content: center;
+    
+        &__icon{
+            width: 50px;
+            margin: 30px 0;
+        }
+    
+        &__single{
+            width: 350px;
+            margin:10px;
+            text-align: center;
+        }
+        &__title{
+           
+        }
+        &__text{
+           
+        }
+    
+    }
+
+
+
+    .home__opinie__sliderWrapper {
+        margin: 50px auto;
+        width: 550px;
+    }
+
+    
+  }
+
+
+
+  @media only screen and (max-width: 700px) {
+
+    .section1 {
+   
+        &__h1{
+            font-size: 50px;
+            margin: 50px;
+        }
+
+        &__innerLeft{       
+            width: 100%;
+        }
+
+        &__circle{
+            width: 300px;
+            height: 300px;
+            border: 3px dashed rgba(216, 213, 29, 0.37);
+        }
+
+    }
+
+
+    .section2{
+
+    
+        &__h6{
+            margin: 100px 20px 50px;
+            width: auto;
+        }
+
+        &__circle{
+            width: 200px;
+            height: 200px;
+            border: 2px dashed rgba(216, 213, 29, 0.37);
+        }
+    }
+
+    .section3{
+
+    
+        &__h2{
+            font-size: 50px;
+        }
+    
+    }
+
+
+    .section4{
+   
+        height: 300px;
+    
+        &__imgContainer{
+            height: 100%;
+            width: 100%;
+            background-image: url("/images/public-speaking2.jpg");
+            background-size: cover;
+            background-position: right;
+        }
+        
+        
+    }
+
+
+    .home{
+    
+        &__opinie{
+
+            &__sliderWrapper {
+                margin: 50px 20px;
+                width: auto;
+            }
+    
+            &__h1{
+                font-size: 50px;          
+            }
+
+
+     
+         
+            &__moveLeft{
+                left: 0px;
+                transform: translateY(-50%);
+            }
+            &__moveRight{
+                right:0px;
+
+            }
+
+        }
+        
+    }
+
+    .accordion{
+
+        &__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__column{
+            margin: 0 10px;
+            width: 450px;   
+            max-width: 95%;    
+            min-width: 250px;
+        }
+    }
+
+
+    .contactForm{
+    
+        &__wrapper{
+            width: auto;
+            border-radius: 5px;
+            margin: 100px auto;
+            overflow: auto;
+        }
+
+
+        &__h2{
+            margin: 30px auto;
+            text-align: center;
+        }
+
+    }
+
+    
+  }

@@ -1,0 +1,32 @@
+
+.authPageHeight{
+    height: 100%;
+}
+.authPage{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    flex-grow: 1;
+   
+    &__wrapper{
+        display: flex;
+        flex-direction: column;    
+        height: 100%;
+        background-color: #000;
+    }
+    &__a{
+         align-self: flex-end;
+         margin: 20px;
+         cursor: pointer;
+         background-color: #fff;
+         text-decoration: none;
+         color: #000;
+    }
+
+    &__p{
+        color: #fff;
+    }
+
+}

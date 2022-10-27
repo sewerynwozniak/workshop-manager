@@ -1,0 +1,31 @@
+.contactForm{
+    
+    
+    &__wrapper{
+        background-color: #fff;
+        max-width: 450px;
+        border-radius: 5px;
+        margin: 100px;
+        overflow: auto;
+    }
+
+    &__h2{
+        margin: 30px 80px;
+        color: rgb(71, 71, 71);
+    }
+
+
+    &__input{
+        display: block;
+        margin: 20px auto;
+        padding: 5px;
+        width: 80%;
+        border: solid rgb(211, 211, 211) 1px;
+    }
+    &__submit{
+        display: block;
+        margin: 30px auto;
+        color: #fff;
+        overflow: auto;
+    }
+}
