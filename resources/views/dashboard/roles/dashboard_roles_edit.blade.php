@@ -10,8 +10,6 @@
 </div>
 
 
-
-
 <ul class="table__body">
 
     <div class="table__li">
@@ -23,11 +21,8 @@
         </form>
         
     </div>
-    
-
 
 </ul>
 
 
-  
 @endsection

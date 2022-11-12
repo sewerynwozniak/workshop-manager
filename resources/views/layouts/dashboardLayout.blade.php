@@ -14,7 +14,10 @@
         <div class="sidebar__wrapper">
             <span class="sidebar__logo">PS</span>
             <ul class="sidebar__menu">
-                <li >
+                <li class="sidebar__li">
+                    <a class="sidebar__menuItem" href="/dashboard/users">Users</a>
+                </li>
+                <li class="sidebar__li">
                     <a class="sidebar__menuItem" href="/dashboard/roles">Roles</a>
                 </li>
       

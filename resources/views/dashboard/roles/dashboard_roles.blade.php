@@ -24,14 +24,19 @@ $rolesColumns = Schema::getColumnListing('roles');
 </div>  
 
 
-<ul class="table__body">
+<ul class="tableAll__body">
 
     @foreach ($roles as $role)      
-        <li class="table__li">
+        <li class="tableAll__li">
             {{$role['name']}}
-            <div class="table__btnWrapper">
+            <div class="tableAll__btnWrapper">
                 <a class="btn btn--blue" href="/dashboard/roles/{{$role['id']}}/edit">Edit</a>
-                <a class="btn btn--red" href="">Delete</a>
+                {{-- <a  href="/dashboard/roles/{{$role['id']}}">Delete</a> --}}
+                <form class="tableAll__form" method="POST" action="/dashboard/roles/{{$role['id']}}">
+                    @csrf
+                    @method('DELETE')
+                    <input class="btn btn--red" type="submit" value="Delete">
+                </form>
             </div>
         </li>
     @endforeach

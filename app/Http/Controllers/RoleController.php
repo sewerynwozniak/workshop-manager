@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RoleController extends Controller
 {
   
+
     
 
     public function update(Request $request){
@@ -31,6 +32,14 @@ class RoleController extends Controller
         $role = Role::create($formFields);
 
         return redirect('/dashboard/roles')->with('message', 'Role created');
+    }
+
+
+    public function destroy(Request $request){
+
+        $role = Role::find($request->route('id'));
+        $role->delete();
+        return redirect('/dashboard/roles/')->with('message', 'Role has been deleted');
     }
 
 

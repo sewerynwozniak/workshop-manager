@@ -44,6 +44,9 @@
 .authPage__p {
   color: #fff;
 }
+.authPage__h3 {
+  color: #fff;
+}
 
 .dashboard__wrapper {
   display: flex;
@@ -75,46 +78,76 @@
   border-bottom: 1px solid rgb(197, 197, 197);
   border-radius: 3px;
 }
-
 .table__body {
-  margin: 30px;
-  padding: 10px 20px;
   display: flex;
-  flex-direction: column;
-  list-style: none;
+  justify-content: center;
 }
-
-.table__li {
+.table__form {
   padding: 10px 0;
   border-bottom: 1px solid rgb(197, 197, 197);
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.table__form input {
+  padding: 5px 0;
+  margin: 10px 0;
+}
+.table__form select {
+  padding: 5px 0;
+  margin: 10px 0;
+}
+
+.tableAll__body {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.tableAll__li {
   display: flex;
   justify-content: space-between;
 }
-
-.table__form {
-  display: contents;
+.tableAll__name {
+  margin: 0 10px;
+}
+.tableAll__btnWrapper {
+  display: flex;
+  align-items: center;
+}
+.tableAll__form {
+  margin: 0 5px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+.tableAll__form input {
+  padding: 8px 25px;
+  margin: 10px 0;
 }
 
 .btn {
   border: none;
+  font-size: 14px;
   padding: 8px 25px;
   border-radius: 5px;
   text-decoration: none;
+  cursor: pointer;
 }
 .btn--yellow {
   background-color: rgb(203, 221, 39);
   color: rgb(104, 104, 104);
 }
 .btn--green {
-  background-color: rgb(20, 173, 33);
+  background-color: rgb(57, 161, 66);
   color: rgb(255, 255, 255);
 }
 .btn--blue {
-  background-color: rgb(23, 117, 160);
+  background-color: rgb(42, 147, 196);
   color: rgb(255, 255, 255);
 }
 .btn--red {
-  background-color: rgb(190, 24, 24);
+  background-color: rgb(216, 50, 50);
   color: rgb(255, 255, 255);
 }
 .btn--center {
@@ -337,6 +370,9 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+.sidebar__li {
+  margin: 20px 0;
 }
 .sidebar__menu {
   padding: 20px 0;

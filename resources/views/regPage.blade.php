@@ -4,7 +4,8 @@
     
     <div class="authPage">
 
-        <h3>Register</h3>
+        <h3 class="authPage__h3">Register</h3>
+
 
         <p class="authPage__p">You already have account? <a href="/login">Log in</a></p>
 
