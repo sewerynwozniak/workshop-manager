@@ -9,17 +9,27 @@
 </head>
 <body>
 
+@php
+    $isAdmin = Auth::user()->role_id ==1;
+@endphp
+
     <div class="dashboard__wrapper">
 
         <div class="sidebar__wrapper">
             <span class="sidebar__logo">PS</span>
             <ul class="sidebar__menu">
-                <li class="sidebar__li">
-                    <a class="sidebar__menuItem" href="/dashboard/users">Users</a>
-                </li>
-                <li class="sidebar__li">
-                    <a class="sidebar__menuItem" href="/dashboard/roles">Roles</a>
-                </li>
+                @if ($isAdmin)
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard/users">Users</a>
+                    </li>
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard/roles">Roles</a>
+                    </li>
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard/posts">Posts</a>
+                    </li>
+                @endif
+              
       
             </ul>
 

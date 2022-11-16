@@ -60,6 +60,8 @@ class UserController extends Controller
 
     public function authenticate(Request $request){
 
+      
+
         $credentials = $request->validate([
             'email'=>'required',
             'password'=>'required' 
@@ -100,7 +102,6 @@ class UserController extends Controller
 
         $user = User::find($request->route('id'));
      
-
         $formFields = $request->validate([
             'name'=>'required',
             'email'=>['required', 'email'],
@@ -108,8 +109,6 @@ class UserController extends Controller
         ]);
     
         $formFields['role_id'] = intval($formFields['role_id']);
-
-      
 
         $user->update($formFields);
 

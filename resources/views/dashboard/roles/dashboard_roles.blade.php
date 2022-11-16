@@ -2,6 +2,13 @@
 
 
 @section('content')
+
+@php
+$rolesColumns = Schema::getColumnListing('roles'); 
+$isAdmin = Auth::user()->role_id ==1;
+@endphp
+
+
 @if (session('message'))
     <div class="flash">
         {{ session('message') }}
@@ -14,9 +21,7 @@
 </div>
 
 
-@php
-$rolesColumns = Schema::getColumnListing('roles'); 
-@endphp
+
 
 <div class="table__header">
     <span>{{$rolesColumns[1]}}</span>

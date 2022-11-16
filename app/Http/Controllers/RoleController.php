@@ -25,9 +25,9 @@ class RoleController extends Controller
     public function store(Request $request){
        
         $formFields = $request->validate([
-            'name'=>'required',
+            'title'=>'required',
+            'text'=>'required',
         ]);
-
 
         $role = Role::create($formFields);
 
