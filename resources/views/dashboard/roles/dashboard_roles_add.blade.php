@@ -16,7 +16,7 @@
     <div class="table__li">
         <form class="table__form" method="POST" action="/dashboard/roles">
             @csrf
-            <input name='name' type="text">
+            <input name='name' type="text" placeholder="role">
             <input class="btn btn--blue" type="submit" value="Add">
         </form>
         

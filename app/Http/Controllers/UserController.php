@@ -93,7 +93,7 @@ class UserController extends Controller
 
 
     public function showEdit(Request $request){
-        $user = User::find($request->route('id'));     
+        $user = User::find($request->route('id'));   
         return view('dashboard.users.dashboard_users_edit', ['user'=>$user, 'roles'=>Role::all()]);
     }
     

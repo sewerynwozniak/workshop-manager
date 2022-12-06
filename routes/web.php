@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\WorkshopController;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Workshop;
 
 
 /*
@@ -59,12 +62,7 @@ Route::get('/dashboard', function () {
 
 
 
-    //Posts
 
-     //Show all posts
-     Route::get('/dashboard/posts', function () {
-        return view('dashboard.posts.dashboard_posts', ['posts'=>Post::all()]);
-    });
 
 
 
@@ -133,10 +131,61 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     //store post
     Route::post('/dashboard/posts', [PostController::class, 'store']);
 
+    //show edit post
+    Route::get('/dashboard/posts/{id}/edit', function ($id) {
+        return view('dashboard.posts.dashboard_posts_edit', ['post'=>Post::find($id)]);
+    });
+
+    //edit post
+    Route::put('/dashboard/posts/{id}', [PostController::class, 'update']);
+
+
+
+    //Workshops
+      //show add workshop form
+      Route::get('/dashboard/workshops/add', function () {
+        return view('dashboard.workshops.dashboard_workshops_add', ['Workshops'=>Workshop::all(), 'users'=>User::all()]);
+    });
+
+
+     //store workshop
+     Route::post('/dashboard/workshops', [WorkshopController::class, 'store']);
+
+
+     //show edit page
+    Route::get('/dashboard/workshops/{id}/edit', function ($id) {
+        return view('dashboard.workshops.dashboard_workshops_edit', ['workshop'=>Workshop::find($id)]);
+    });
+
+
 });
 
 
 
+    //Posts
+
+     //Show all posts
+     Route::get('/dashboard/posts', function () {
+        return view('dashboard.posts.dashboard_posts', ['posts'=>Post::all()]);
+    });
+
+    //show single post
+    Route::get('/dashboard/posts/{id}', function ($id) {
+        return view('dashboard.posts.dashboard_post', ['post'=>Post::find($id)]);
+    });
+
+
+    //Workshops
+
+     //Show all workshops
+     Route::get('/dashboard/workshops', function () {
+        return view('dashboard.workshops.dashboard_workshops', ['workshops'=>Workshop::orderBy('date', 'desc')->get()]);
+    });
+
+    //show single workshops
+    Route::get('/dashboard/workshops/{id}', function ($id) {
+        return view('dashboard.workshops.dashboard_workshop', ['workshop'=>Workshop::find($id)]);
+    });
 
 
 

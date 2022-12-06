@@ -98,7 +98,6 @@
   padding: 5px 0;
   margin: 10px 0;
 }
-
 .tableAll__body {
   display: flex;
   flex-direction: column;
@@ -107,6 +106,12 @@
 .tableAll__li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.tableAll__li > a {
+  color: #000;
+  text-decoration: none;
+  margin: 10px;
 }
 .tableAll__name {
   margin: 0 10px;
@@ -124,6 +129,12 @@
 .tableAll__form input {
   padding: 8px 25px;
   margin: 10px 0;
+}
+.tableAll__title {
+  margin: 20px 0;
+}
+.tableAll__text {
+  margin: 20px 0;
 }
 
 .btn {
@@ -358,7 +369,6 @@
 
 .sidebar__wrapper {
   height: 100vh;
-  width: 80px;
   background-color: #000;
   display: flex;
   flex-direction: column;

@@ -25,15 +25,20 @@
                     <li class="sidebar__li">
                         <a class="sidebar__menuItem" href="/dashboard/roles">Roles</a>
                     </li>
-                    <li class="sidebar__li">
-                        <a class="sidebar__menuItem" href="/dashboard/posts">Posts</a>
-                    </li>
+
                 @endif
-              
+                <li class="sidebar__li">
+                    <a class="sidebar__menuItem" href="/dashboard/posts">Posts</a>
+                </li>
+                <li class="sidebar__li">
+                    <a class="sidebar__menuItem" href="/dashboard/workshops">Workshops</a>
+                </li>
       
             </ul>
 
         </div>
+
+       
 
         <div class="dashboard__main">
 

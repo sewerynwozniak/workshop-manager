@@ -16,8 +16,8 @@
     <div class="table__li">
         <form class="table__form" method="POST" action="/dashboard/posts">
             @csrf
-            <input name='title' type="text">
-            <textarea name="text" id="" cols="30" rows="10"></textarea>
+            <input name='title' type="text" placeholder="title">
+            <textarea name="text" id="" cols="30" rows="10" placeholder="text"></textarea>
             <input class="btn btn--blue" type="submit" value="Add">
         </form>
         

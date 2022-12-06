@@ -50,10 +50,15 @@ $userAttr = $user->getAttributes();
             <input name={{$key}} type="text" value="{{$val}}">
         @endforeach
 
+
+        
         <input class="btn btn--blue" type="submit" value="Save">
     </form>
         
   
+
+
+    
     
 
 

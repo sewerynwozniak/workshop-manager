@@ -21,4 +21,17 @@ class PostController extends Controller
         return redirect('/dashboard/posts')->with('message', 'Post created');
     }
 
+
+    public function update(Request $request){
+
+        $role = Post::find($request->route('id'));
+        $role->title = $request->title;
+        $role->text = $request->text;
+        $role->save();
+        return redirect('/dashboard/posts/')->with('message', 'Post updated');
+        
+    }
+    
+
+
 }

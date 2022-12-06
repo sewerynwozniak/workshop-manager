@@ -4,7 +4,7 @@
 @section('content')
 
 @php
-$rolesColumns = Schema::getColumnListing('roles'); 
+$workshopsColumns = Schema::getColumnListing('workshops'); 
 @endphp
 
 
@@ -15,27 +15,28 @@ $rolesColumns = Schema::getColumnListing('roles');
 @endif
 
 <div class="dashboard__middleBar">
-    <span class="dashboard__title">Roles</span>
-    <a class="btn__add btn btn--green" href="/dashboard/roles/add">Add new</a>
+    <span class="dashboard__title">Workshops</span>
+    <a class="btn__add btn btn--green" href="/dashboard/workshops/add">Add new</a>
 </div>
 
 
 
 
 <div class="table__header">
-    <span>{{$rolesColumns[1]}}</span>
+    <span>{{$workshopsColumns[1]}}</span>
     <span>Actions</span>
 </div>  
 
 
 <ul class="tableAll__body">
 
-    @foreach ($roles as $role)      
+    @foreach ($workshops as $workshop)      
         <li class="tableAll__li">
-            {{$role['name']}}
+            <a class="tableAll__name" href="/dashboard/workshops/{{$workshop->id}}">{{$workshop['date']}}</a>
+            
             <div class="tableAll__btnWrapper">
-                <a class="btn btn--blue" href="/dashboard/roles/{{$role['id']}}/edit">Edit</a>
-                <form class="tableAll__form" method="POST" action="/dashboard/roles/{{$role['id']}}">
+                <a class="btn btn--blue" href="/dashboard/workshops/{{$workshop['id']}}/edit">Edit</a>
+                <form class="tableAll__form" method="POST" action="/dashboard/workshops/{{$workshop['id']}}">
                     @csrf
                     @method('DELETE')
                     <input class="btn btn--red" type="submit" value="Delete">
