@@ -32,7 +32,9 @@ Route::get('/', function () {
 
 //Dashboard
 Route::get('/dashboard', function () {
-    return view('dashboard.dashboard_main');
+    //dd(Auth::user()->id);
+    // dd(User::find(1)->workshops);
+    return view('dashboard.dashboard_main', ['workshops'=>User::find(Auth::user()->id)->workshops]);
 })->middleware('auth');
 
 
@@ -154,10 +156,13 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
      //show edit page
     Route::get('/dashboard/workshops/{id}/edit', function ($id) {
-        return view('dashboard.workshops.dashboard_workshops_edit', ['workshop'=>Workshop::find($id)]);
+        return view('dashboard.workshops.dashboard_workshops_edit', ['workshop'=>Workshop::find($id), 'users'=>User::all()]);
     });
 
+    //edit workshop
+    Route::put('/dashboard/workshops/{id}', [WorkshopController::class, 'update']);
 
+ 
 });
 
 

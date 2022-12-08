@@ -18,20 +18,41 @@
         <div class="sidebar__wrapper">
             <span class="sidebar__logo">PS</span>
             <ul class="sidebar__menu">
+
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard">
+                            <img class="sidebar__icon" src="{{ asset('images/icons/dashboard.png') }}" alt=""> 
+                            <span class="sidebar__menuTitle">Dashboard</span>
+                        </a>
+                    </li>
+
                 @if ($isAdmin)
                     <li class="sidebar__li">
-                        <a class="sidebar__menuItem" href="/dashboard/users">Users</a>
+                        <a class="sidebar__menuItem" href="/dashboard/users">
+                            <img class="sidebar__icon" src="{{ asset('images/icons/user.png') }}" alt=""> 
+                            <span class="sidebar__menuTitle">Users</span>
+                        </a>
                     </li>
                     <li class="sidebar__li">
-                        <a class="sidebar__menuItem" href="/dashboard/roles">Roles</a>
+                        <a class="sidebar__menuItem" href="/dashboard/roles">
+                            <img class="sidebar__icon" src="{{ asset('images/icons/roles.png') }}" alt=""> 
+                            <span class="sidebar__menuTitle">Roles</span>
+                        </a>
                     </li>
 
                 @endif
+
                 <li class="sidebar__li">
-                    <a class="sidebar__menuItem" href="/dashboard/posts">Posts</a>
+                    <a class="sidebar__menuItem" href="/dashboard/posts">
+                        <img class="sidebar__icon" src="{{ asset('images/icons/post.png') }}" alt=""> 
+                        <span class="sidebar__menuTitle">Posts</span>
+                    </a>
                 </li>
                 <li class="sidebar__li">
-                    <a class="sidebar__menuItem" href="/dashboard/workshops">Workshops</a>
+                    <a class="sidebar__menuItem" href="/dashboard/workshops">
+                        <img class="sidebar__icon" src="{{ asset('images/icons/calendar.png') }}" alt=""> 
+                        <span class="sidebar__menuTitle">Workshop</span>
+                    </a>
                 </li>
       
             </ul>
@@ -56,9 +77,12 @@
                 </div>
             </div>
         
+            <div class="dashboard__content">
+                @yield('content')
+            </div>
 
     
-            @yield('content')
+            
 
         </div>
 

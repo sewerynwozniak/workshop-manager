@@ -8,7 +8,7 @@ use App\Models\User;
 
 class WorkshopController extends Controller
 {
-    //
+   
     public function store(Request $request){
 
        
@@ -22,15 +22,31 @@ class WorkshopController extends Controller
 
        $workshop = Workshop::create($formFields);
 
-        foreach($request->users as $key=>$val){
-            
-            $workshop->users()->attach($val);
-        }
+
+        $workshop->users()->sync($request->users);
        
          
-    
-         
-
         return redirect('/dashboard/workshops')->with('message', 'Workshop created');
     }
+
+
+
+    public function update(Request $request){
+
+        $workshop = Workshop::find($request->route('id'));
+        $formFields = $request->validate([
+            'date'=>'required',
+            'time'=>'required',
+            'place'=>'required',
+        ]);
+
+        $formFields['description'] = $request->description;
+
+       $workshop->update($formFields);
+       
+        $workshop->users()->sync($request->users);
+
+        return redirect('/dashboard/workshops')->with('message', 'Workshop updated');
+    }
+
 }
