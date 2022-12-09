@@ -49,4 +49,13 @@ class WorkshopController extends Controller
         return redirect('/dashboard/workshops')->with('message', 'Workshop updated');
     }
 
+
+    public function destroy(Request $request){
+        $workshop = Workshop::find($request->route('id'));
+        $workshop->delete();
+        return redirect('/dashboard/workshops/')->with('message', 'Workshop has been deleted');
+    }
+
+
+
 }

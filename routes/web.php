@@ -141,9 +141,13 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     //edit post
     Route::put('/dashboard/posts/{id}', [PostController::class, 'update']);
 
+    //delete post
+    Route::delete('/dashboard/posts/{id}', [PostController::class, 'destroy']);
+
 
 
     //Workshops
+
       //show add workshop form
       Route::get('/dashboard/workshops/add', function () {
         return view('dashboard.workshops.dashboard_workshops_add', ['Workshops'=>Workshop::all(), 'users'=>User::all()]);
@@ -161,6 +165,10 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
     //edit workshop
     Route::put('/dashboard/workshops/{id}', [WorkshopController::class, 'update']);
+
+
+    //delete post
+    Route::delete('/dashboard/workshops/{id}', [WorkshopController::class, 'destroy']);
 
  
 });
@@ -180,14 +188,19 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     });
 
 
-    //Workshops
-
      //Show all workshops
      Route::get('/dashboard/workshops', function () {
-        return view('dashboard.workshops.dashboard_workshops', ['workshops'=>Workshop::orderBy('date', 'desc')->get()]);
+        return view('dashboard.workshops.dashboard_workshops', 
+        [
+            'oncomingWorkshops'=>Workshop::where('date', '>=', date("Y-m-d"))->orderBy('date', 'DESC')->get(),
+            'pastWorkshops'=>Workshop::where('date', '<', date("Y-m-d"))->orderBy('date', 'DESC')->get()
+        ]);
+
     });
 
-    //show single workshops
+
+ 
+    //show single workshop
     Route::get('/dashboard/workshops/{id}', function ($id) {
         return view('dashboard.workshops.dashboard_workshop', ['workshop'=>Workshop::find($id)]);
     });

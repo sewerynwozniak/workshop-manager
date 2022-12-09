@@ -109,6 +109,9 @@
   flex-direction: column;
   margin: 30px;
 }
+.tableAll__body--past {
+  border-top: 1px solid rgb(58, 58, 58);
+}
 .tableAll__li {
   display: flex;
   justify-content: space-between;
@@ -118,6 +121,9 @@
   color: #000;
   text-decoration: none;
   margin: 10px;
+}
+.tableAll__separator {
+  margin: 0 30px;
 }
 .tableAll__name {
   margin: 0 10px;

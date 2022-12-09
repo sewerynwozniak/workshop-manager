@@ -8,7 +8,7 @@
 
 <div class="dashboard__middleBar">
     <span class="dashboard__title">Edit Workshops</span>
-    <a class="dashboard__a" href="/dashboard/roles">Workshops</a>
+    <a class="dashboard__a" href="/dashboard/workshops">Workshops</a>
 </div>
 
 

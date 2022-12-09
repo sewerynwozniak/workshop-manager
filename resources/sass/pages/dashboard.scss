@@ -86,6 +86,10 @@
         display: flex;
         flex-direction: column;
         margin: 30px;
+
+        &--past{
+            border-top: 1px solid rgb(58, 58, 58);
+        }
     }
     &__li{
         display: flex;
@@ -98,6 +102,11 @@
             margin: 10px;
         }
     }
+
+    &__separator{
+        margin: 0 30px;
+    }
+
     &__name{
         margin: 0 10px;
     }

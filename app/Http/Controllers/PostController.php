@@ -31,6 +31,12 @@ class PostController extends Controller
         return redirect('/dashboard/posts/')->with('message', 'Post updated');
         
     }
+
+    public function destroy(Request $request){
+        $role = Post::find($request->route('id'));
+        $role->delete();
+        return redirect('/dashboard/posts/')->with('message', 'Post has been deleted');
+    }
     
 
 
