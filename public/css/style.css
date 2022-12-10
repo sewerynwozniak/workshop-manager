@@ -75,6 +75,41 @@
   padding: 10px 20px;
 }
 
+.dashboardCard__wrapper {
+  display: flex;
+}
+.dashboardCard__card {
+  width: 500px;
+  max-width: 90%;
+  height: 400px;
+  margin: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  background-position: center;
+}
+.dashboardCard__card--workshop {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(/images/workshop-card.jpg?e53999666b91a49debda360c2ecc332c);
+}
+.dashboardCard__card--post {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(/images/desk.jpg?39491267ea66a9a1ad4b10363113d5ca);
+}
+.dashboardCard__title {
+  padding: 40px 0;
+  font-size: 22px;
+}
+.dashboardCard__subtitle {
+  margin: 20px 0;
+}
+.dashboardCard__btn {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff !important;
+}
+
 .table__header {
   margin: 30px;
   padding: 10px 20px;

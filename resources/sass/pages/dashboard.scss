@@ -35,6 +35,52 @@
 }
 
 
+.dashboardCard{
+
+    &__wrapper{
+        display: flex;
+    }
+    &__card{
+        width: 500px;
+        max-width: 90%;
+        height: 400px;
+        margin: 20px;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        background-position: center;
+
+
+        &--workshop{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(../../../public/images/workshop-card.jpg);
+        }
+        &--post{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(../../../public/images/desk.jpg);
+        }
+    }
+
+    &__title{
+        padding: 40px 0;
+        font-size: 22px;
+    }
+    &__subtitle{
+        margin: 20px 0;
+    }
+
+
+
+    &__btn{       
+        display: inline-block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff !important;
+    }
+
+}
+
+
 
 .table{
 

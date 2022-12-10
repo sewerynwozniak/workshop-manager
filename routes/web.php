@@ -32,9 +32,12 @@ Route::get('/', function () {
 
 //Dashboard
 Route::get('/dashboard', function () {
-    //dd(Auth::user()->id);
-    // dd(User::find(1)->workshops);
-    return view('dashboard.dashboard_main', ['workshops'=>User::find(Auth::user()->id)->workshops]);
+    
+    return view('dashboard.dashboard_main', 
+    [
+        'upcomingUserWorkshop'=>User::find(Auth::user()->id)->workshops()->where('date', '>=', date("Y-m-d"))->orderBy('date', 'ASC')->first(),
+        'latestPost'=>Post::all()->last()
+    ]);
 })->middleware('auth');
 
 
@@ -192,8 +195,10 @@ Route::middleware(['auth','isAdmin'])->group(function () {
      Route::get('/dashboard/workshops', function () {
         return view('dashboard.workshops.dashboard_workshops', 
         [
-            'oncomingWorkshops'=>Workshop::where('date', '>=', date("Y-m-d"))->orderBy('date', 'DESC')->get(),
-            'pastWorkshops'=>Workshop::where('date', '<', date("Y-m-d"))->orderBy('date', 'DESC')->get()
+            'upcomingAllWorkshops'=>Workshop::where('date', '>=', date("Y-m-d"))->orderBy('date', 'DESC')->get(),
+            'pastAllWorkshops'=>Workshop::where('date', '<', date("Y-m-d"))->orderBy('date', 'DESC')->get(),
+            'upcomingUserWorkshops'=>User::find(Auth::user()->id)->workshops()->where('date', '>=', date("Y-m-d"))->orderBy('date', 'DESC')->get(),
+            'pastUserWorkshops'=>User::find(Auth::user()->id)->workshops()->where('date', '<', date("Y-m-d"))->orderBy('date', 'DESC')->get()
         ]);
 
     });
