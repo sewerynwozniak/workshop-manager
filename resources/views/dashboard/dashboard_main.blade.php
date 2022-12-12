@@ -15,10 +15,17 @@
 
         <div class="dashboardCard__card dashboardCard__card--workshop">
             <h5 class="dashboardCard__title">Upcoming workshop</h5>
-            <p class="dashboardCard__subtitle">{{$upcomingUserWorkshop->date}}</p>
-            <p class="dashboardCard__dashboardCard__subtitle">{{$upcomingUserWorkshop->time}}</p>
-            <p class="dashboardCard__dashboardCard__subtitle">{{$upcomingUserWorkshop->place}}</p>
-            <a class="dashboardCard__btn btn--yellow" href="/dashboard/workshops/{{{$upcomingUserWorkshop->id}}}">View</a>
+            @if ($upcomingUserWorkshop)
+                <p class="dashboardCard__subtitle">{{$upcomingUserWorkshop->date}}</p>
+                <p class="dashboardCard__dashboardCard__subtitle">{{$upcomingUserWorkshop->time}}</p>
+                <p class="dashboardCard__dashboardCard__subtitle">{{$upcomingUserWorkshop->place}}</p>
+                <a class="dashboardCard__btn btn--yellow" href="/dashboard/workshops/{{{$upcomingUserWorkshop->id}}}">View</a>
+                                 
+            @else
+                <p class="dashboardCard__subtitle">no workshop</p>
+            
+            @endif
+            
         </div>
 
         <div class="dashboardCard__card dashboardCard__card--post">
