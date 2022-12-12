@@ -116,6 +116,33 @@ class UserController extends Controller
     }
 
 
+    public function updateAvatar(Request $request){
+
+        // $user = User::find($request->route('id'));
+     
+        // $formFields = $request->validate([
+        //     'name'=>'required',
+        //     'email'=>['required', 'email'],
+        //     'role_id'=>'required',
+        // ]);
+    
+        // $formFields['role_id'] = intval($formFields['role_id']);
+
+        // $user->update($formFields);
+
+  
+
+        if($request->hasFile('avatar')){
+            $filename = $request->avatar->getClientOriginalName();
+            $request->avatar->storeAs('avatar',$filename,'public');
+            Auth()->user()->update(['avatar'=>$filename]);
+        }
+
+
+        return redirect('/dashboard/settings')->with('message', 'Avatar updated');
+    }
+
+
 
 
 

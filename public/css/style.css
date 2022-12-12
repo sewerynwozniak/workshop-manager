@@ -77,6 +77,7 @@
 
 .dashboardCard__wrapper {
   display: flex;
+  justify-content: center;
 }
 .dashboardCard__card {
   width: 500px;
@@ -91,8 +92,14 @@
 .dashboardCard__card--workshop {
   background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(/images/workshop-card.jpg?e53999666b91a49debda360c2ecc332c);
 }
+.dashboardCard__card--workshop:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.541)), url(/images/workshop-card.jpg?e53999666b91a49debda360c2ecc332c);
+}
 .dashboardCard__card--post {
   background-image: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url(/images/desk.jpg?39491267ea66a9a1ad4b10363113d5ca);
+}
+.dashboardCard__card--post:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.541)), url(/images/desk.jpg?39491267ea66a9a1ad4b10363113d5ca);
 }
 .dashboardCard__title {
   padding: 40px 0;
@@ -443,6 +450,7 @@
 }
 .sidebar__icon {
   width: 23px;
+  height: 23px;
   margin: 0 20px;
 }
 .sidebar__menuItem {

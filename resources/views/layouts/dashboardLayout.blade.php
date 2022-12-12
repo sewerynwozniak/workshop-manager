@@ -19,6 +19,9 @@
             <span class="sidebar__logo">PS</span>
             <ul class="sidebar__menu">
 
+
+                   
+
                     <li class="sidebar__li">
                         <a class="sidebar__menuItem" href="/dashboard">
                             <img class="sidebar__icon" src="{{ asset('images/icons/dashboard.png') }}" alt=""> 
@@ -52,6 +55,14 @@
                     <a class="sidebar__menuItem" href="/dashboard/workshops">
                         <img class="sidebar__icon" src="{{ asset('images/icons/calendar.png') }}" alt=""> 
                         <span class="sidebar__menuTitle">Workshop</span>
+                    </a>
+                </li>
+
+
+                <li class="sidebar__li">
+                    <a class="sidebar__menuItem" href="/dashboard/settings">
+                        <img class="sidebar__icon" src="{{ asset('images/icons/settings.png') }}" alt=""> 
+                        <span class="sidebar__menuTitle">Settings</span>
                     </a>
                 </li>
       

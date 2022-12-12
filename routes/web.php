@@ -212,3 +212,14 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
 
 
+    //Settings
+
+     //Show settings view
+     Route::get('/dashboard/settings', function () {
+        return view('dashboard.settings.dashboard_settings');
+    });
+
+
+    //update settings
+    Route::put('/dashboard/settings/{id}', [UserController::class, 'updateAvatar']);
+

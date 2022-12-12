@@ -21,14 +21,16 @@ class UserSeeder extends Seeder
                 'name' => 'Seweryn',   
                 'role_id' =>1,
                 'email'=> 'sewerynwozniak111@gmail.com',
-                'password'=>Hash::make(1234)
+                'password'=>Hash::make(1234),
+                'avatar'=>'avatar.png'
             ],
             [
                 'id' =>2,
                 'name' => 'Maciej',   
                 'role_id' =>2,
                 'email'=> 'maciej111@gmail.com',
-                'password'=>Hash::make(1234)
+                'password'=>Hash::make(1234),
+                'avatar'=>'avatar.png'
             ],
             ]
             );
