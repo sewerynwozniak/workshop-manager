@@ -23,7 +23,9 @@ class User extends Authenticatable
         'role_id',
         'email',
         'password',
-        'avatar'
+        'avatar',
+        'ex',
+        'league_id'
     ];
 
     /**

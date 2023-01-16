@@ -22,7 +22,10 @@ class UserSeeder extends Seeder
                 'role_id' =>1,
                 'email'=> 'sewerynwozniak111@gmail.com',
                 'password'=>Hash::make(1234),
-                'avatar'=>'avatar.png'
+                'avatar'=>'avatar.png',
+                'xp'=>20,
+                'league_id'=>1
+                
             ],
             [
                 'id' =>2,
@@ -30,7 +33,9 @@ class UserSeeder extends Seeder
                 'role_id' =>2,
                 'email'=> 'maciej111@gmail.com',
                 'password'=>Hash::make(1234),
-                'avatar'=>'avatar.png'
+                'avatar'=>'avatar.png',
+                'xp'=>20,
+                'league_id'=>1
             ],
             ]
             );

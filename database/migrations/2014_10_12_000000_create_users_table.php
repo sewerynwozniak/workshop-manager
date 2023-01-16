@@ -17,9 +17,11 @@ class CreateUsersTable extends Migration
             $table->id();       
             $table->string('name');
             $table->string('email')->unique();
-            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');;
+            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
             $table->string('password');
             $table->string('avatar')->default('avatar.png');
+            $table->integer('xp')->default(0);
+            $table->foreignId('league_id')->constrained('leagues')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

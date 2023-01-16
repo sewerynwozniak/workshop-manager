@@ -69,9 +69,17 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect('/');
+               
+            //return redirect('/');
         }      
+    }
+
+
+    public function setLeague(){
+
+      
+       
+          
     }
 
 
@@ -118,19 +126,6 @@ class UserController extends Controller
 
     public function updateAvatar(Request $request){
 
-        // $user = User::find($request->route('id'));
-     
-        // $formFields = $request->validate([
-        //     'name'=>'required',
-        //     'email'=>['required', 'email'],
-        //     'role_id'=>'required',
-        // ]);
-    
-        // $formFields['role_id'] = intval($formFields['role_id']);
-
-        // $user->update($formFields);
-
-  
 
         if($request->hasFile('avatar')){
             $filename = $request->avatar->getClientOriginalName();

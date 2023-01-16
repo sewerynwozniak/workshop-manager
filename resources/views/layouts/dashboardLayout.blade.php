@@ -29,6 +29,20 @@
                         </a>
                     </li>
 
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard/profile">
+                            <img class="sidebar__icon" src="{{ asset('images/icons/progress.png') }}" alt=""> 
+                            <span class="sidebar__menuTitle">Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar__li">
+                        <a class="sidebar__menuItem" href="/dashboard/profile">
+                            <img class="sidebar__icon" src="{{ asset('images/icons/assignment.png') }}" alt=""> 
+                            <span class="sidebar__menuTitle">Assignments</span>
+                        </a>
+                    </li>
+
                 @if ($isAdmin)
                     <li class="sidebar__li">
                         <a class="sidebar__menuItem" href="/dashboard/users">
