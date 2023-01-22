@@ -19,6 +19,7 @@ class CreateWorkshopsTable extends Migration
             $table->time('time');
             $table->string('place');
             $table->string('description');
+            $table->integer('xp');
             $table->timestamps();
         });
     }

@@ -68,19 +68,12 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-               
-            //return redirect('/');
+            $request->session()->regenerate();            
+            return redirect('/');
         }      
     }
 
 
-    public function setLeague(){
-
-      
-       
-          
-    }
 
 
     public function logout(Request $request){

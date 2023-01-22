@@ -16,10 +16,11 @@ class DatabaseSeeder extends Seeder
        
         $this->call([
             RoleSeeder::class,
+            LeagueSeeder::class,
             UserSeeder::class,
             PostSeeder::class,
             WorkshopSeeder::class,
-            LeagueSeeder::class,
+            
         ]);
     }
 }

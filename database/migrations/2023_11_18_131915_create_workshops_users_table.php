@@ -12,11 +12,12 @@ class CreateWorkshopsUsersTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('user_workshop', function (Blueprint $table) {
             $table->id();
             $table->foreignId('workshop_id')->constrained('workshops')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->boolean('claimed')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +29,7 @@ class CreateWorkshopsUsersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('user_workshop');
     }
 }

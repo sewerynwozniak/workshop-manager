@@ -170,8 +170,12 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::put('/dashboard/workshops/{id}', [WorkshopController::class, 'update']);
 
 
-    //delete post
+    //delete workshop
     Route::delete('/dashboard/workshops/{id}', [WorkshopController::class, 'destroy']);
+
+
+    //claim reward for workshop
+    Route::get('/dashboard/workshops/{id}/claimReward', [WorkshopController::class, 'claimReward']);
 
  
 });
@@ -190,6 +194,8 @@ Route::middleware(['auth','isAdmin'])->group(function () {
         return view('dashboard.posts.dashboard_post', ['post'=>Post::find($id)]);
     });
 
+
+    //Workshops
 
      //Show all workshops
      Route::get('/dashboard/workshops', function () {

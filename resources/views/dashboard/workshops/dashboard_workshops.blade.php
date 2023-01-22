@@ -7,7 +7,6 @@
 
 
 
-
 @if (session('message'))
     <div class="flash">
         {{ session('message') }}
@@ -15,8 +14,12 @@
 @endif
 
 @php
+
 $postsColumns = Schema::getColumnListing('posts'); 
 $isAdmin = Auth::user()->role_id ==1;
+
+
+
 @endphp
 
 <div class="dashboard__middleBar">
@@ -70,6 +73,19 @@ $isAdmin = Auth::user()->role_id ==1;
             <a class="tableAll__name" href="/dashboard/workshops/{{$workshop->id}}">{{$workshop['date']}}</a>
             
             <div class="tableAll__btnWrapper">
+
+                @php
+                    $row = DB::table('user_workshop')
+                        ->where('workshop_id', (int)$workshop->id )
+                        ->where('user_id', Auth::user()->id)
+                        ->value('claimed');
+
+                        // dd($row);
+                @endphp
+
+                @if (!$row)
+                    <a class="btn btn--green" href="/dashboard/workshops/{{$workshop['id']}}/claimReward">Claim reward</a>
+                @endif            
                 <a class="btn btn--blue" href="/dashboard/workshops/{{$workshop['id']}}/edit">Edit</a>
                 <form class="tableAll__form" method="POST" action="/dashboard/workshops/{{$workshop['id']}}">
                     @csrf
