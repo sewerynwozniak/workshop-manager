@@ -14,22 +14,24 @@
 
 
 
-
 <div class="table__header">
     <span>Progress</span>
 </div>  
 
+{{-- @php
+    dd(Auth::user()::find(1)->league->name)
+@endphp --}}
 
 <ul class="tableAll__body">
 
       
         <li class="tableAll__li">        
             <span>XP</span>
-            <span>4324</span>
+            <span>{{$xp}}</span>
         </li>
         <li class="tableAll__li">        
             <span>Current league</span>
-            <span>Green</span>
+            <span>{{Auth::user()::find(1)->league->name}}</span>
         </li>
 
 

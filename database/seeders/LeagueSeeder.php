@@ -22,7 +22,19 @@ class LeagueSeeder extends Seeder
             [
                 'id' =>2,
                 'name' => 'blue' 
-            ]
+            ],
+            [
+                'id' =>3,
+                'name' => 'red' 
+            ],
+            [
+                'id' =>4,
+                'name' => 'purple' 
+            ],
+            [
+                'id' =>5,
+                'name' => 'gold' 
+            ],
             
             ]
         );

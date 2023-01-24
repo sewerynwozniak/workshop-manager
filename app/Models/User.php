@@ -58,5 +58,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Workshop::class);    
      }
 
+     public function league()
+    {
+        return $this->hasOne(League::class, 'id');
+    }
+
   
 }

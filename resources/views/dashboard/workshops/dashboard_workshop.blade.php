@@ -22,10 +22,17 @@
 
 <ul class="tableAll__body">
 
-    <h5 class="tableAll__title">{{$workshop->date}}</h5>
+    <h5 class="tableAll__title">Date</h5>
+    <p class="tableAll__text">{{$workshop->date}}</p>
+    <h5 class="tableAll__title">Time</h5>
     <p class="tableAll__text">{{$workshop->time}}</p>
+    <h5 class="tableAll__title">Place</h5>
     <p class="tableAll__text">{{$workshop->place}}</p>
+    <h5 class="tableAll__title">XP</h5>
+    <p class="tableAll__text">{{$workshop->xp}}</p>
+    <h5 class="tableAll__title">Description</h5>
     <p class="tableAll__text">{{$workshop->description}}</p>
+    
 
 </ul>
 

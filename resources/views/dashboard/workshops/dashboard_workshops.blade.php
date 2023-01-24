@@ -80,7 +80,7 @@ $isAdmin = Auth::user()->role_id ==1;
                         ->where('user_id', Auth::user()->id)
                         ->value('claimed');
 
-                        // dd($row);
+                   
                 @endphp
 
                 @if (!$row)

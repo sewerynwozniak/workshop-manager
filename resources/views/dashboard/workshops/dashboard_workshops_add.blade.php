@@ -19,6 +19,7 @@
             <input name='date' type="date">
             <input name='time' type="time">
             <input name='place' type="text" placeholder="place">
+            <input name='xp' type="number" placeholder="xp" min="10" max="100" step="10">
             <span>Add participants</span>
             @foreach ($users as $user)
                 <div class="table__checkboxWrapper">

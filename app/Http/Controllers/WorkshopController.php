@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Workshop; 
 use App\Models\User; 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 use DB;
 
 class WorkshopController extends Controller
@@ -18,6 +19,7 @@ class WorkshopController extends Controller
             'date'=>'required',
             'time'=>'required',
             'place'=>'required',
+            'xp'=>'required',
         ]);
 
         $formFields['description'] = $request->description;
@@ -40,6 +42,7 @@ class WorkshopController extends Controller
             'date'=>'required',
             'time'=>'required',
             'place'=>'required',
+            'xp'=>'required',
         ]);
 
         $formFields['description'] = $request->description;
@@ -82,7 +85,12 @@ class WorkshopController extends Controller
             ->where('workshop_id', $workshopId )
             ->where('user_id', $userId)
             ->update(['claimed' => 1]);
+
+            app('App\Http\Controllers\UserController')->assignLeague();
+
             }
+
+
 
         return redirect('/dashboard/workshops/')->with('message', 'Reward claimed');
     }

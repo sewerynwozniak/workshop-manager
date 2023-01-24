@@ -22,6 +22,7 @@
             <input name='date' type="date" value={{$workshop['date']}}>
             <input name='time' type="time" value={{$workshop['time']}}>
             <input name='place' type="text" placeholder="place" value={{$workshop['place']}}>
+            <input name='xp' type="number" placeholder="xp" min="10" max="100" step="10" value={{$workshop['xp']}}>
             <span>Add participants</span>
             
             @foreach ($users as $user)

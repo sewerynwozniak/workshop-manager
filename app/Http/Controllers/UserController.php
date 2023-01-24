@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\User; 
 use App\Models\Role;
+use App\Models\League;
 use Illuminate\Support\Facades\Auth;
+use DB;
+
+
 
 class UserController extends Controller
 {
     
-   
-
 
     public function create(){
         return view('regPage');
@@ -129,6 +131,36 @@ class UserController extends Controller
 
         return redirect('/dashboard/settings')->with('message', 'Avatar updated');
     }
+
+
+
+    public function assignLeague(){
+
+
+        $user = Auth::user();
+        $xp = Auth::user()->xp;
+
+        if ($xp<200){
+            $user->league_id = 1;
+            $user->save();
+        }elseif ($xp>=250 &&  $xp<500){
+            $user->league_id = 2;
+            $user->save();
+        }elseif ($xp>=500 &&  $xp<750){
+            $user->league_id = 3;
+            $user->save();
+        }elseif ($xp>=750 &&  $xp<1000){
+            $user->league_id = 4;
+            $user->save();
+        }else{
+            $user->league_id = 5;
+            $user->save();
+        };
+           
+ 
+
+    }
+
 
 
 

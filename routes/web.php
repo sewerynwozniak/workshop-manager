@@ -236,7 +236,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
      //Show profile view
      Route::get('/dashboard/profile', function () {
-        return view('dashboard.profile.dashboard_profile');
+        return view('dashboard.profile.dashboard_profile', ['xp'=>User::find(Auth::user()->id)->xp]);
     });
 
 
