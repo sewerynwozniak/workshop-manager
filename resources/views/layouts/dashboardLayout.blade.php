@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="sidebar__li">
-                        <a class="sidebar__menuItem" href="/dashboard/profile">
+                        <a class="sidebar__menuItem" href="/dashboard/assignment">
                             <img class="sidebar__icon" src="{{ asset('images/icons/assignment.png') }}" alt=""> 
                             <span class="sidebar__menuTitle">Assignments</span>
                         </a>

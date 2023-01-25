@@ -178,6 +178,37 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     //claim reward for workshop
     Route::get('/dashboard/workshops/{id}/claimReward', [WorkshopController::class, 'claimReward']);
 
+
+
+
+        //Assignment
+
+      //show add assignment form
+      Route::get('/dashboard/assignments/add', function () {
+        return view('dashboard.assignments.dashboard_assignments_add', ['assignments'=>Assignment::all(), 'users'=>User::all()]);
+    });
+
+
+     //store assignment
+     Route::post('/dashboard/assignments', [assignmentController::class, 'store']);
+
+
+     //show edit page
+    Route::get('/dashboard/assignments/{id}/edit', function ($id) {
+        return view('dashboard.assignments.dashboard_assignments_edit', ['assignment'=>Assignment::find($id), 'users'=>User::all()]);
+    });
+
+    //edit assignment
+    Route::put('/dashboard/assignments/{id}', [AssignmentController::class, 'update']);
+
+
+    //delete assignment
+    Route::delete('/dashboard/assignments/{id}', [AssignmentController::class, 'destroy']);
+
+
+    //claim reward for assignment
+    Route::get('/dashboard/assignments/{id}/claimReward', [AssignmentController::class, 'claimReward']);
+
  
 });
 
