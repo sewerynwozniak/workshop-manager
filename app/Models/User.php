@@ -60,7 +60,7 @@ class User extends Authenticatable
 
      public function league()
     {
-        return $this->hasOne(League::class, 'id');
+        return $this->belongsToMany(League::class);
     }
 
   

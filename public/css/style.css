@@ -191,6 +191,33 @@
   margin: 5px 0;
 }
 
+.profile__card {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgb(196, 196, 196);
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile__card h5 {
+  margin: 10px auto;
+  font-size: 25px;
+  font-weight: 500;
+}
+.profile__card p {
+  margin: 10px auto;
+  font-size: 20px;
+}
+.profile__cardContainer {
+  display: flex;
+  margin: 30px;
+}
+
 .btn {
   border: none;
   font-size: 14px;

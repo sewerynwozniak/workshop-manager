@@ -9,6 +9,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Workshop;
+use App\Models\League;
 
 
 /*
@@ -236,7 +237,11 @@ Route::middleware(['auth','isAdmin'])->group(function () {
 
      //Show profile view
      Route::get('/dashboard/profile', function () {
-        return view('dashboard.profile.dashboard_profile', ['xp'=>User::find(Auth::user()->id)->xp]);
+        return view('dashboard.profile.dashboard_profile', [
+            'xp'=>User::find(Auth::user()->id)->xp,
+            'league'=>League::find(Auth::user()->league_id)
+        
+        ]);
     });
 
 
